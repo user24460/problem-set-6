@@ -1,6 +1,6 @@
 # Problem Set 6
 
-Problem Set 6 is our first introduction to two-dimensional graphics using the Canvas API. You'll be tasked with displaying various lines, shapes, and colors on the screen. While there is not an explicit check function for each exercise, there is an example that gives you a better idea what you're code should do. Some of these you'll likely find fairly easy, while others might leave you wanting to pull your hair out. That's alright, and it's kind of the point. Programming is an art that requires perseverance. Break each exercise down into smaller pieces, and use your mathematical reasoning to devise a solution before trying to write any code.
+Problem Set 6 is our first introduction to two-dimensional graphics using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API). You'll be tasked with displaying various lines, shapes, and colors on the screen. While there is not an explicit check function for each exercise, there is an example that gives you a better idea what you're code should do. Some of these you'll likely find fairly easy, while others might leave you wanting to pull your hair out. That's alright, and it's kind of the point. Programming is an art that requires perseverance. Break each exercise down into smaller pieces, and use your mathematical reasoning to devise a solution before trying to write any code.
 
 ## Getting Started
 
@@ -39,15 +39,15 @@ Problem Set 6 contains 9 exercises, each of which will be written in separate fu
 
 ### Exercise 1 (`Hello.`)
 
-Write a function that draws "Hello, World!" on the canvas. You should begin drawing at [10, 50], relative to the canvas, and your text should be a 48px sans-serif font. Make sure the canvas is clear before drawing!
+Write a function that draws `Hello, World!` on the canvas. You should begin drawing at [10, 50], relative to the canvas, and your text should be a 48px sans-serif font. Make sure the canvas is clear before drawing!
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "Hello" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `Hello` button, your output should match that of the example.
 
 ### Exercise 2 (`Rectangle.`)
 
 Write a function that draws a rectangle on the canvas. You should prompt the user for the height and width. You should also prompt the user for the X- and Y-coordinates of the top-left corner of the rectangle.
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "Rectangle" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `Rectangle` button, your output should match that of the example.
 
 Certain values, such as heights and widths that are logically too small or practically too large, should be prohibited. Check the example to see what your code should do in these instances.
 
@@ -70,7 +70,7 @@ Support the following colors:
 * red
 * yellow
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "Color" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `Color` button, your output should match that of the example.
 
 Check the example to see what your code should do if the user enters an unsupported color.
 
@@ -80,7 +80,7 @@ Write a function that draws a right triangle on the canvas. The triangle should 
 
 When drawing your right triangles, the left side shall be designated as the first side and will be smallest of the three side lengths. The bottom side shall be designated as the second side and will be second smallest of the three side lengths. The hypotenuse shall be designated as the third side and will be the largest of the three side lengths.
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "Triangle" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `Triangle` button, your output should match that of the example.
 
 Certain values, such as side lengths that make it impossible to create a valid right triangle, should be prohibited. Check the example to see what your code should do in these instances.
 
@@ -92,7 +92,7 @@ Here is a list of prohibited values:
 
 Write a function that draws a smiley face on the canvas. The head should be a perfect circle with a radius specified by the user. The eyes should also be perfect circles with radii that are 10% of that of the head. The radius of the mouth should be 70% of that of the head. A nose is not required, and the position of the eyes and mouth are up to you (provided) they are on the face.
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "Smile" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `Smile` button, your output should match that of the example.
 
 Certain values, such as radii that are logically too small or practically too large, should be prohibited. Check the example to see what your code should do in these instances.
 
@@ -100,7 +100,7 @@ Certain values, such as radii that are logically too small or practically too la
 
 Write a function that draws a five-point star on the canvas. Prompt the user for the outer radius (i.e., a circle that would connect each of the star's outer points) and inner radius (i.e., a circle that would connect each of the star's inner points). The center of the star should be placed at [125, 125].
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "Star" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `Star` button, your output should match that of the example.
 
 Certain values, such as radii that are logically too small or practically too large, should be prohibited. Check the example to see what your code should do in these instances.
 
@@ -108,7 +108,7 @@ Certain values, such as radii that are logically too small or practically too la
 
 Write a function that draws a stop sign. The stop sign should be outlined in black, but filled red. At the center of the stop sign, the same height as the length of the sides, should be the word STOP (all capitals, white). Each side length should be 80px.
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "Stop Sign" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `Stop Sign` button, your output should match that of the example.
 
 The left-most and top-most sides should have X- and Y-coordinates of 10.
 
@@ -116,7 +116,7 @@ The left-most and top-most sides should have X- and Y-coordinates of 10.
 
 Write a function that draws a block pyramid, where the user specifies the side length of each block. By default, we'll draw a pyramid with a base of five blocks. Give the leftmost point of the pyramid an X-coordinates of 10. Give the bottom of the pyramid a Y-coordinate of 10 less than the height of the canvas.
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "Pyramid" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `Pyramid` button, your output should match that of the example.
 
 Certain values, such as lengths that are logically too small or practically too large, should be prohibited. Check the example to see what your code should do in these instances.
 
@@ -133,7 +133,7 @@ Support the following front door and/or house colors:
 * red
 * yellow
 
-You'll need to use the appropriate Canvas API methods to do this. If you're unsure what your code should do, click the "Example" button to see. When you click the "House" button, your output should match that of the example.
+You'll need to use the appropriate [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) methods to do this. If you're unsure what your code should do, click the `Example` button to see. When you click the `House` button, your output should match that of the example.
 
 Check the example to see what your code should do if the user enters an unsupported color.
 
