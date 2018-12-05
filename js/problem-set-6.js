@@ -11,7 +11,10 @@
  */
 
 function sayHello() {
-
+  let helloDrawing = document.getElementById('canvas1').getContext('2d');
+  helloDrawing.font = '48px sans-serif';
+  /* include syntax to make sure that the text appear more like the example*/
+  helloDrawing.strokeText('Hello, World!', 10, 50);
 }
 
 /*
@@ -38,6 +41,32 @@ function sayHello() {
  */
 
 function drawRectangle() {
+
+  let userInputHeight;
+  do {
+    userInputHeight = Number(prompt('Please enter a reasonable height.'));
+  } while (userInputHeight < 1 || !Number.isInteger(userInputHeight));
+
+  let userInputWidth;
+  do {
+    userInputWidth = Number(prompt('Please enter a reasonable width.'));
+  } while (userInputWidth < 1 || !Number.isInteger(userInputWidth));
+
+  let userInputX;
+  do {
+    userInputX = Number(prompt('Please enter an X-Coordinate'));
+  } while (userInputX < 5 || !Number.isInteger(userInputX));
+
+  let userInputY;
+  do {
+    userInputY = Number(prompt('Please enter a Y-Coordinate'));
+  } while (userInputY < 5 || !Number.isInteger(userInputY));
+
+  /* include code that satisfies last prohibited value*/
+
+  let rectangleDrawing = document.getElementById('canvas2').getContext('2d');
+  rectangleDrawing.strokeRect(userInputX, userInputY, userInputWidth, userInputHeight);
+  rectangle.clearRect(0, 0, canvas2.width, canvas2.height);
 
 }
 
@@ -67,6 +96,8 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
+  let rectangleDrawing = document.getElementById('canvas3').getContext('2d');
+  rectangleDrawing.strokeRect(10, 10, 100, 50);
 
 }
 
