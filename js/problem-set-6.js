@@ -97,11 +97,23 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
-  /* define variables here*/
-  let rectangleDrawing = document.getElementById('canvas3').getContext('2d');
-  rectangleDrawing.fillRect(10, 10, 100, 50);
+  let rectangleDrawing = document.getElementById('canvas3');
+  let context = rectangleDrawing.getContext('2d');
+  context.clearRect(0, 0, rectangleDrawing.width, rectangleDrawing.height);
+
   let color;
-  color = prompt("Please type a color; black, blue, green, orange, purple, red, and yellow are the only accepted fill values.");
+  while(true) {
+    color = prompt("Please type a color; black, blue, green, orange, purple, red, and yellow are the only accepted fill values.");
+    if(color=="black" || color=="blue" || color=="green" || color=="orange" || color=="purple" || color=="red" || color=="yellow") {
+      break;
+    } else {
+      window.alert(`${color} is not a supported color.`);
+      break;
+    }
+  }
+  context.fillStyle = color;
+  context.fillRect(10, 10, 100, 50)
+
   /* include syntax to clear syntax after inputting color value*/
   rectangleDrawing.fillStyle = (color);
 }
