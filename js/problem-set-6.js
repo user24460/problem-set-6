@@ -13,7 +13,6 @@
 function sayHello() {
   let helloDrawing = document.getElementById('canvas1').getContext('2d');
   helloDrawing.font = '48px sans-serif';
-  /* include syntax to make sure that the text appear more like the example*/
   helloDrawing.strokeText('Hello, World!', 10, 50);
 }
 
