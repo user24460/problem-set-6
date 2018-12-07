@@ -41,6 +41,10 @@ function sayHello() {
 
 function drawRectangle() {
 
+  let rectangle = document.getElementById('canvas2');
+  let context = rectangle.getContext('2d');
+  context.clearRect(0, 0, rectangle.width, rectangle.height);
+
   let userInputHeight;
   do {
     userInputHeight = Number(prompt('Please enter a reasonable height.'));
@@ -61,12 +65,9 @@ function drawRectangle() {
     userInputY = Number(prompt('Please enter a Y-Coordinate'));
   } while (userInputY < 5 || !Number.isInteger(userInputY));
 
+  context.strokeRect(userInputX, userInputY, userInputWidth, userInputY);
+
   /* include syntax that satisfies last prohibited value*/
-
-  let rectangleDrawing = document.getElementById('canvas2').getContext('2d');
-  rectangleDrawing.strokeRect(userInputX, userInputY, userInputWidth, userInputHeight);
-
-  /* include syntax that clears the canvas*/
 
 }
 
@@ -107,14 +108,13 @@ function drawColoredRectangle() {
       break;
     } else {
       window.alert(`${color} is not a supported color.`);
+      context.clearRect(0, 0, rectangleDrawing.width, rectangleDrawing.height);
       break;
+      //only deletes when user types in names of colors, not just gibberish//
     }
   }
   context.fillStyle = color;
   context.fillRect(10, 10, 100, 50)
-
-  /* include syntax to clear syntax after inputting color value*/
-  rectangleDrawing.fillStyle = (color);
 }
 
 /*
