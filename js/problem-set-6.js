@@ -62,11 +62,12 @@ function drawRectangle() {
     userInputY = Number(prompt('Please enter a Y-Coordinate'));
   } while (userInputY < 5 || !Number.isInteger(userInputY));
 
-  /* include code that satisfies last prohibited value*/
+  /* include syntax that satisfies last prohibited value*/
 
   let rectangleDrawing = document.getElementById('canvas2').getContext('2d');
   rectangleDrawing.strokeRect(userInputX, userInputY, userInputWidth, userInputHeight);
-  rectangle.clearRect(0, 0, canvas2.width, canvas2.height);
+
+  /* include syntax that clears the canvas*/
 
 }
 
@@ -96,9 +97,16 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
+  let x = -1;
+  let y = -1;
+  let width = -1;
+  let height = -1;
   let rectangleDrawing = document.getElementById('canvas3').getContext('2d');
-  rectangleDrawing.strokeRect(10, 10, 100, 50);
-
+  rectangleDrawing.fillRect(10, 10, 100, 50);
+  let color;
+  color = prompt("Please type a color; black, blue, green, orange, purple, red, and yellow are the only accepted fill values.");
+  /* include syntax to clear syntax after inputting color value
+  rectangleDrawing.fillStyle = (color);
 }
 
 /*
