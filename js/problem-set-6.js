@@ -49,7 +49,7 @@ function drawRectangle() {
   do {
     userInputHeight = Number(prompt('Please enter a reasonable height.'));
   } while (userInputHeight < 1 || !Number.isInteger(userInputHeight));
-
+//include syntax to satisfy last requirement
   let userInputWidth;
   do {
     userInputWidth = Number(prompt('Please enter a reasonable width.'));
@@ -64,6 +64,8 @@ function drawRectangle() {
   do {
     userInputY = Number(prompt('Please enter a Y-Coordinate'));
   } while (userInputY < 5 || !Number.isInteger(userInputY));
+
+
 
   context.strokeRect(userInputX, userInputY, userInputWidth, userInputY);
 
@@ -114,7 +116,6 @@ function drawColoredRectangle() {
       context.clearRect(0, 0, rectangleDrawing.width, rectangleDrawing.height);
 
       break;
-      //only deletes when user types in names of colors, not just gibberish//
     }
   }
 }
