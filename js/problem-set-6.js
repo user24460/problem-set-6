@@ -105,16 +105,18 @@ function drawColoredRectangle() {
   while(true) {
     color = prompt("Please type a color; black, blue, green, orange, purple, red, and yellow are the only accepted fill values.");
     if(color=="black" || color=="blue" || color=="green" || color=="orange" || color=="purple" || color=="red" || color=="yellow") {
+      context.fillStyle = color;
+      context.fillRect(10, 10, 100, 50);
+
       break;
     } else {
       window.alert(`${color} is not a supported color.`);
       context.clearRect(0, 0, rectangleDrawing.width, rectangleDrawing.height);
+
       break;
       //only deletes when user types in names of colors, not just gibberish//
     }
   }
-  context.fillStyle = color;
-  context.fillRect(10, 10, 100, 50)
 }
 
 /*
