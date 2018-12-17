@@ -49,7 +49,7 @@ function drawRectangle() {
   do {
     userInputHeight = Number(prompt('Please enter a reasonable height.'));
   } while (userInputHeight < 1 || !Number.isInteger(userInputHeight));
-//include syntax to satisfy last requirement
+
   let userInputWidth;
   do {
     userInputWidth = Number(prompt('Please enter a reasonable width.'));
@@ -65,11 +65,17 @@ function drawRectangle() {
     userInputY = Number(prompt('Please enter a Y-Coordinate'));
   } while (userInputY < 5 || !Number.isInteger(userInputY));
 
+  if (userInputHeight > canvas2.height || userInputWidth > canvas2.width) {
+    alert('Sorry! The height and/or width you inputted is/are too large to fit into the canvas.');
+    context.clearRect(0, 0, rectangle.width, rectangle.height);
+  }
 
+  if (userInputX > canvas2.width || userInputY > canvas2.height) {
+    alert('Sorry! The x- and/or y-coordinates you inputted is/are too large to fit into the canvas.');
+    context.clearRect(0, 0, rectangle.width, rectangle.height);
+  }
 
   context.strokeRect(userInputX, userInputY, userInputWidth, userInputY);
-
-  /* include syntax that satisfies last prohibited value*/
 
 }
 
@@ -150,7 +156,7 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
-  
+
 }
 
 /*
