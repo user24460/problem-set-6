@@ -156,7 +156,40 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
+  let triangleDrawing = document.getElementById('canvas4');
+  let context = triangleDrawing.getContext('2d');
+  context.clearRect(0, 0, triangleDrawing.width, triangleDrawing.height);
 
+  //triangle helloDrawing
+  context.beginPath();
+  context.moveTo(100, 100);
+  context.lineTo(100, 300);
+  context.lineTo(300, 300);
+  context.closePath();
+
+  //makes triangle visible
+  context.lineWidth = 1;
+  context.strokeStyle = '#666666';
+  context.stroke();
+
+  //make sure to include syntax that calculates the value of the hypotenuse
+
+  /*let side1;
+  do {
+    side1 = Number(prompt('Please type in an appropriate length for Side 1, which has to have the smallest length of all sides.'));
+  }
+
+  let side2;
+  do {
+    side2 = Number(prompt('Please type in an appropriate length for Side 2, which has to have the second smallest length of all sides.'));
+  }
+
+  let side3;
+  do {
+    side3 = Number(prompt('Please type in an appropriate length for the hypotenuse, which ahs to have the largest length of all sides.'));
+  }
+
+  context.stroke () ..., 10, 10);*/
 }
 
 /*
