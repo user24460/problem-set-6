@@ -160,9 +160,35 @@ function drawTriangle() {
   let context = triangleDrawing.getContext('2d');
   context.clearRect(0, 0, triangleDrawing.width, triangleDrawing.height);
 
+  //gathering data from user
+  let pointAB;
+  do {
+    pointAB = Number(prompt('Please type in an appropriate length for Side 1, which has to have the smallest length of all sides.'));
+  }
+
+  let pointBC;
+  do {
+    pointBC = Number(prompt('Please type in an appropriate length for Side 2, which has to have the second smallest length of all sides.'));
+  }
+
+  let pointCA;
+  do {
+    pointCA = Number(prompt('Please type in an appropriate length for Side 3, which has to have the largest length of all sides.'));
+  }
+
+  //specifying path
+  let pointA [0, 10];
+  let pointB [10, pointAB];
+  let pointC [];
+
+  //calculating third point
+  pointC[1] = (pointAB * pointAB + pointAC * pointAC - pointBC * pointBC) / (2 * pointAB);
+  pointC[0] = Math.sqrt(pointAC * pointAC - pointC[1] * pointC[1]);
+  console.log(A, B, C);
+
   //triangle helloDrawing
   context.beginPath();
-  context.moveTo(100, 100);
+  context.moveTo(A, 100);
   context.lineTo(100, 300);
   context.lineTo(300, 300);
   context.closePath();
@@ -171,6 +197,7 @@ function drawTriangle() {
   context.lineWidth = 1;
   context.strokeStyle = '#666666';
   context.stroke();
+
 
   //make sure to include syntax that calculates the value of the hypotenuse
 
