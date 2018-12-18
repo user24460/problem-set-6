@@ -206,6 +206,31 @@ function drawTriangle() {
 
 function drawSmileyFace() {
 
+  let smileyFace = document.getElementById('canvas5');
+  let context = smileyFace.getContext('2d');
+  context.clearRect (0, 0, smileyFace.width, smileyFace.height);
+
+  let radius = Number(prompt('Please enter a valid radius.'));
+  if ((radius * 2) + 10 > canvas5.width || (radius * 2) + 10 > canvas5.height) {
+    alert('Sorry! The width and/or height does not fit on the canvas!');
+  } else {
+    //draw
+    context.beginPath();
+    //circle
+    context.arc(radius + 10, radius + 10, radius, 0, 2 * Math.PI);
+    //left eye
+    context.moveTo((radius * 0.7) + 10 + (radius * 0.1), (radius * 0.6) + 30);
+    context.arc((radius * 0.7) + 10, (radius * 0.6) + 30, radius * 0.1, 0, 2 * Math.PI);
+    //right eye
+    context.moveTo((radius * 1.3) + 10 + (radius * 0.1), (radius * 0.6) + 30);
+    context.arc((radius * 1.3) + 10, (radius * 0.6) + 30, (radius * 0.1), 0, 2 * Math.PI);
+    //mouth
+    context.moveTo((radius + 10) + (radius * 0.7), radius + 20);
+    context.arc(radius + 10, radius + 20, radius * 0.7, 0, 1 * Math.PI);
+    //draw
+    context.stroke();
+  }
+
 }
 
 /*
