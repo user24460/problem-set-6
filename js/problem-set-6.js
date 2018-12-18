@@ -11,9 +11,11 @@
  */
 
 function sayHello() {
+
   let helloDrawing = document.getElementById('canvas1').getContext('2d');
   helloDrawing.font = '48px sans-serif';
   helloDrawing.strokeText('Hello, World!', 10, 50);
+
 }
 
 /*
@@ -105,6 +107,7 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
+
   let rectangleDrawing = document.getElementById('canvas3');
   let context = rectangleDrawing.getContext('2d');
   context.clearRect(0, 0, rectangleDrawing.width, rectangleDrawing.height);
@@ -156,67 +159,30 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
+
   let triangleDrawing = document.getElementById('canvas4');
   let context = triangleDrawing.getContext('2d');
   context.clearRect(0, 0, triangleDrawing.width, triangleDrawing.height);
 
-  //gathering data from user
-  let pointAB;
-  do {
-    pointAB = Number(prompt('Please type in an appropriate length for Side 1, which has to have the smallest length of all sides.'));
+  let side1 = Number(prompt('Please enter a value for side 1.'));
+  let side2 = Number(prompt('Please enter a value for side 2.'));
+  let side3 = Number(prompt('Please enter a value for side 3.'));
+
+  if (isNaN(side1) || isNaN(side2) || isNaN(side3) == true) {
+    alert('One or more of your values is not a valid integer.');
+  } else if ((side1 * side1) + (side2 * side2) != (side3 * side3)) {
+    alert('The values you have inputted do not make a valid right triangle!');
+  } else if (side1 > canvas4.height || side2 > canvas4.width) {
+    alert('The triangle is too big to fit on the canvas.');
+  } else {
+    context.beginPath();
+    context.moveTo(10, 10);
+    context.lineTo(10, 10 + side1);
+    context.lineTo(10 + side2, 10 + side1);
+    context.closePath();
+    context.stroke();
   }
 
-  let pointBC;
-  do {
-    pointBC = Number(prompt('Please type in an appropriate length for Side 2, which has to have the second smallest length of all sides.'));
-  }
-
-  let pointCA;
-  do {
-    pointCA = Number(prompt('Please type in an appropriate length for Side 3, which has to have the largest length of all sides.'));
-  }
-
-  //specifying path
-  let pointA [0, 10];
-  let pointB [10, pointAB];
-  let pointC [];
-
-  //calculating third point
-  pointC[1] = (pointAB * pointAB + pointAC * pointAC - pointBC * pointBC) / (2 * pointAB);
-  pointC[0] = Math.sqrt(pointAC * pointAC - pointC[1] * pointC[1]);
-  console.log(A, B, C);
-
-  //triangle helloDrawing
-  context.beginPath();
-  context.moveTo(A, 100);
-  context.lineTo(100, 300);
-  context.lineTo(300, 300);
-  context.closePath();
-
-  //makes triangle visible
-  context.lineWidth = 1;
-  context.strokeStyle = '#666666';
-  context.stroke();
-
-
-  //make sure to include syntax that calculates the value of the hypotenuse
-
-  /*let side1;
-  do {
-    side1 = Number(prompt('Please type in an appropriate length for Side 1, which has to have the smallest length of all sides.'));
-  }
-
-  let side2;
-  do {
-    side2 = Number(prompt('Please type in an appropriate length for Side 2, which has to have the second smallest length of all sides.'));
-  }
-
-  let side3;
-  do {
-    side3 = Number(prompt('Please type in an appropriate length for the hypotenuse, which ahs to have the largest length of all sides.'));
-  }
-
-  context.stroke () ..., 10, 10);*/
 }
 
 /*
