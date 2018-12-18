@@ -253,7 +253,37 @@ function drawSmileyFace() {
 
 function drawStar() {
 
-}
+  let drawStar = document.getElementById('canvas6');
+  let context = drawStar.getContext('2d');
+  context.clearRect (0, 0, drawStar.width, drawStar.height);
+
+  let outerRadius = Number(prompt('Please enter a value for the outer radius. (Must be greater than inner radius)'));
+  let innerRadius = Number(prompt('Please enter a value for the inner radius. (Must be greater than outer radius)'));
+  if (isNaN(outerRadius) == true || isNaN(innerRadius) == true) {
+    alert('Sorry! One or both of your values are not valid integers.');
+  } else if (innerRadius > outerRadius) {
+    alert('The outer radius must be greater than the inner radius.');
+  } else if (outerRadius < 2) {
+    alert('The ouer radius is too small!');
+  } else if (innerRadius < 1) {
+    alert('The inner radius is too small!');
+  } else {
+    context.beginPath();
+    context.moveTo(125, 125 - outerRadius);
+
+    let deg = 0;
+    for (let i=0; i<=5; i++) {
+        context.lineTo(125 + Math.round((Math.cos(Math.PI * (deg - 90) / 180) * outerRadius)), 125 + Math.round((Math.sin(Math.PI * (deg - 90) / 180) * outerRadius)));
+        deg += 36;
+        context.lineTo(125 + Math.round((Math.cos(Math.PI * (deg - 90) / 180) * innerRadius)), 125 + Math.round((Math.sin(Math.PI * (deg - 90) / 180) * innerRadius)));
+        deg += 36;
+      }
+      context.stroke();
+      context.closePath();
+    }
+
+  }
+
 
 /*
  * Stop Sign. 7 points.
