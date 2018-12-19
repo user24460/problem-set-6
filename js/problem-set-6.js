@@ -284,7 +284,6 @@ function drawStar() {
 
   }
 
-
 /*
  * Stop Sign. 7 points.
  *
@@ -301,6 +300,36 @@ function drawStar() {
  */
 
 function drawStopSign() {
+
+  let drawStopSign = document.getElementById('canvas7');
+  let context = drawStopSign.getContext('2d');
+  context.clearRect (0, 0, drawStopSign.width, drawStopSign.height);
+
+  //defining variables
+  let sideLength = 80;
+  let stopLocation = Number((80/Math.sqrt(2)).toFixed(0));
+  let a = 70;
+  let b = 10;
+
+  //drawing Sign
+  context.beginPath();
+  context.moveTo(a, b);
+  context.lineTo(a + sideLength, b);
+  context.lineTo(a + sideLength + stopLocation, b + stopLocation);
+  context.lineTo(a + sideLength + stopLocation, b + sideLength + stopLocation);
+  context.lineTo(a + sideLength, b + sideLength + stopLocation + stopLocation);
+  context.lineTo(a, b + sideLength + stopLocation + stopLocation);
+  context.lineTo(a - stopLocation, b + sideLength + stopLocation);
+  context.lineTo(a - stopLocation, b + stopLocation);
+  context.lineTo(a, b);
+  context.fillStyle = "red";
+  context.fill();
+  context.closePath();
+
+  //creating STOP
+  context.fillStyle = "white";
+  context.font = "65px sans-serif";
+  context.fillText("STOP", 22, 133);
 
 }
 
