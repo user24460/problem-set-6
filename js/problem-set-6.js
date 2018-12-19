@@ -353,6 +353,36 @@ function drawStopSign() {
 
 function drawPyramid() {
 
+  let drawPyramid = document.getElementById('canvas8');
+  let context = drawPyramid.getContext('2d');
+  context.clearRect (0, 0, drawPyramid.width, drawPyramid.height);
+
+  let length = Number(prompt('Please enter a length for each side of the blocks.'));
+  if (isNaN(length) == true) {
+    alert('Sorry, that value is not a number!');
+  } else if (length > 100) {
+    alert('Sorry, that value is too large to fit on to the canvas!');
+  } else {
+    //drawing the pyramid
+    context.beginPath();
+    let xCoord = 10;
+    let xCoordPrev = 10;
+    let yCoord = canvas8.height - 10 - length;
+    let b;
+    let a;
+    for (b = 0; b < 5; b++) {
+    for (a = 0; a < 5 - b; a++) {
+      context.moveTo(xCoord, yCoord);
+      context.rect(xCoord, yCoord, length, length);
+      xCoord += length;
+      }
+      yCoord -= length;
+      xCoordPrev += length / 2;
+      xCoord = xCoordPrev;
+    }
+      context.lineWidth = 1;
+      context.stroke()
+  }
 }
 
 /*
