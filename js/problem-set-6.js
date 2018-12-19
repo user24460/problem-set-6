@@ -416,4 +416,59 @@ function drawPyramid() {
 
 function drawHouse() {
 
+  let drawHouse = document.getElementById('canvas9');
+  let context = drawHouse.getContext('2d');
+  context.clearRect(0, 0, drawHouse.width, drawHouse.height);
+
+  //user input
+  let houseColor = prompt('Enter a valid color for the house.');
+  let doorColor = prompt('Enter a valid color for the door.');
+  if ((houseColor == "blue" || houseColor == "brown" || houseColor == "green" || houseColor == "orange" || houseColor == "red" || houseColor == "yellow" || doorColor == "blue" || doorColor == "brown" || doorColor == "green" || doorColor == "orange" || doorColor == "red" || doorColor == "yellow")) {
+
+    let houseHeight = (canvas9.height / 5) * 3;
+    let houseWidth = canvas9.width - 300;
+    context.rect(150, canvas9.height - 10 - houseHeight, houseWidth, houseHeight)
+
+    //drawing house
+    context.fillStyle = houseColor;
+    context.fill();
+    context.strokeStyle = 'black';
+    context.stroke();
+    context.beginPath();
+    context.moveTo(512, 10);
+    context.lineTo(151, 294);
+    context.lineTo(873, 294);
+    context.closePath();
+
+    //roof
+    context.fillStyle = 'gray';
+    context.fill();
+
+    //drawing door
+    context.fillStyle = doorColor;
+    context.fillRect(450, 540, 124, 210);
+    context.strokeRect(450, 540, 124, 210);
+    context.beginPath();
+    context.moveTo(568, 645);
+    context.arc(560, 645, 8, 0, Math.PI * 2);
+    context.stroke();
+
+    //door knob
+    context.fillStyle = 'gold';
+    context.fill();
+
+    //drawing windows
+    context.fillStyle = 'lightBlue';
+    context.fillRect(250, 367, 100, 100);
+    context.strokeRect(250, 367, 100, 100);
+    context.fillRect(250, canvas9.height - 185, 100, 100);
+    context.strokeRect(250, canvas9.height - 185, 100, 100);
+    context.fillRect(674, 367, 100, 100);
+    context.strokeRect(674, 367, 100, 100);
+    context.fillRect(674, canvas9.height - 185, 100, 100);
+    context.strokeRect(674, canvas9.height - 185, 100, 100);
+  } else {
+    alert('Sorry, one of your colors is invalid.');
+  }
+
 }
